@@ -2,29 +2,39 @@
 <html lang="en">
     <head>
       <link rel="stylesheet" href="styles.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
-  <body class="flex">
-    <main class="flex">
-      <h1>Rock, Paper, Scissors</h1>
-      <h2>Choose Your Game!</h2>
+  <body>
+    <section class="flex human left-section">
+      <h6>👤</h6>
+      <h4>Human</h4>
+      <h5>Wins: 0</h5>
+    </section>
+    <main>
+      <section class="main-section">
+        <div class="flex title">
+        <h1>Rock, Paper, Scissors</h1>
+        <h2>Choose Your Game!</h2>
+        </div>
       <section class="flex home-page">
-        <section class="classic flex">
-          <h3>Classic</h3>
+        <div class="rules classic flex">
+          <h3 class="flex">Classic</h3>
             <ul class="flex">
-              <li></li>
-              <li></li>
-              <li></li>
+              <li>rule 1</li>
+              <li>rule 2</li>
+              <li> rule 3</li>
             </ul>
-        </section>
-        <section class="difficult flex">
+        </div>
+        <div class="rules difficult flex">
+          <h3 class="flex">Difficult</h3>
           <ul class="flex">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>rule</li>
+            <li>rule</li>
+            <li>rule</li>
+            <li>rule</li>
+            <li>rule</li>
           </ul>
-        </section>
+        </div>
       </section>
       <section class="flex classic-view hidden">
         <!-- Will need to change h2 -->
@@ -44,15 +54,13 @@
         <!-- Will need to change h2 -->
         <!-- innerHTML inserted here -->
       </section>
-      <section class="flex human">
-        <h4>Human</h4>
-        <h5>Wins: 0</h5>
       </section>
-      <section class="flex computer">
+        </main>
+      <section class="flex computer right-section">
+        <h6>💻</h6>
         <h4>Computer</h4>
         <h5>Wins: 0</h5>
       </section>
-    </main>
     <script type="text/javascript" src="player.js"></script>
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript" src="main.js"></script>
