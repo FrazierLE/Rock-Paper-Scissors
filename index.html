@@ -2,21 +2,29 @@
 <html lang="en">
     <head>
       <link rel="stylesheet" href="styles.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
-  <body class="flex">
-    <main class="flex">
-      <h1>Rock, Paper, Scissors</h1>
-      <h2>Choose Your Game!</h2>
+  <body>
+    <section class="flex human left-section">
+      <h4>Human</h4>
+      <h5>Wins: 0</h5>
+    </section>
+    <main>
+      <section class="main-section">
+        <div class="title">
+        <h1>Rock, Paper, Scissors</h1>
+        <h2>Choose Your Game!</h2>
+        </div>
       <section class="flex home-page">
-        <section class="classic flex">
+        <div class="classic flex">
           <h3>Classic</h3>
             <ul class="flex">
               <li></li>
               <li></li>
               <li></li>
             </ul>
-        </section>
-        <section class="difficult flex">
+        </div>
+        <div class="difficult flex">
           <ul class="flex">
             <li></li>
             <li></li>
@@ -24,35 +32,32 @@
             <li></li>
             <li></li>
           </ul>
-        </section>
+        </div>
       </section>
-      <section class="flex classic-view hidden">
+      <!-- <section class="flex classic-view hidden">
         <!-- Will need to change h2 -->
-        <img id="rock" src="#" alt="rock">
-        <img id="paper" src="#" alt="paper">
-        <img id="scissors" src="#" alt="scissors">
+        <img class="hidden" id="rock" src="#" alt="rock">
+        <img class="hidden" id="paper" src="#" alt="paper">
+        <img class="hidden" id="scissors" src="#" alt="scissors">
       </section>
       <section class="flex difficult-view hidden">
         <!-- Will need to change h2 -->
-        <img id="rock" src="#" alt="rock">
-        <img id="paper" src="#" alt="paper">
-        <img id="scissors" src="#" alt="scissors">
-        <img id="placeholder1" src="#" alt="placeholder1">
-        <img id="placeholder2" src="#" alt="placeholder2">
+        <img class="hidden" id="rock" src="#" alt="rock">
+        <img class="hidden" id="paper" src="#" alt="paper">
+        <img class="hidden" id="scissors" src="#" alt="scissors">
+        <img class="hidden" id="placeholder1" src="#" alt="placeholder1">
+        <img class="hidden" id="placeholder2" src="#" alt="placeholder2">
       </section>
       <section class="flex outcome-view hidden">
         <!-- Will need to change h2 -->
         <!-- innerHTML inserted here -->
+      </section> -->
       </section>
-      <section class="flex human">
-        <h4>Human</h4>
-        <h5>Wins: 0</h5>
-      </section>
-      <section class="flex computer">
+        </main>
+      <section class="flex computer right-section">
         <h4>Computer</h4>
         <h5>Wins: 0</h5>
       </section>
-    </main>
     <script type="text/javascript" src="player.js"></script>
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript" src="main.js"></script>
