@@ -1,5 +1,5 @@
-var human = new Player ('human', '👤');
-var computer = new Player ('computer', '💻');
+var human = new Player ('Human', '👤');
+var computer = new Player ('Computer', '💻');
 var rock = './assets/rock.png';
 var paper = './assets/post-it.png';
 var scissors = './assets/scissors.png';
@@ -12,9 +12,8 @@ class Game {
     this.competitors = [];
   }
   rallyTheTroops(human, computer) {
-    console.log('testing1', human)
-    console.log('testing2', computer)
     this.competitors.push(human, computer)
+    console.log('TEST1: ', this.competitors[0].name)
   }
   randomCompChoice() {
     for (var i = 0; i < classicChoices.length; i++) {
@@ -25,7 +24,36 @@ class Game {
   }
   showTheWinner() {
       if (this.compChoice === this.humanChoice) {return 'its a draw!'}
-      else {return 'you lose!'}
+      else if (this.compChoice === './assets/post-it.png' && this.humanChoice === scissors) {
+        this.competitors[0].wins += 1
+        return 'Human wins!'}
+      else if (this.compChoice === './assets/post-it.png' && this.humanChoice === rock) {
+        this.competitors[1].wins += 1
+        return 'Computer wins!'}
+      else if (this.compChoice === './assets/scissors.png' && this.humanChoice === paper) {
+        this.competitors[1].wins += 1
+        return 'Computer wins!'}
+      else if (this.compChoice === './assets/scissors.png' && this.humanChoice === rock) {
+        this.competitors[0].wins += 1;
+        return 'Human wins!'}
+      else if (this.compChoice === './assets/post-it.png' && this.humanChoice === rock) {
+          this.competitors[1].wins += 1;
+        return 'Computer wins!'}
+      else if (this.compChoice === './assets/post-it.png' && this.humanChoice === scissors) {
+        this.competitors[0].wins += 1
+        return 'Human wins!'}
+      // else if (this.compChoice === './assets/post-it.png' && this.humanChoice === scissors) {
+      //   return `${this.competitors[0].name} wins!`}
+      // else if (this.compChoice === './assets/post-it.png' && this.humanChoice === rock) {
+      //   return `${this.competitors[1].name} wins!`}
+      // else if (this.compChoice === './assets/scissors.png' && this.humanChoice === paper) {
+      //   return `${this.competitors[1].name} wins!`}
+      // else if (this.compChoice === './assets/scissors.png' && this.humanChoice === rock) {
+      //   return `${this.competitors[0].name} wins!`}
+      // else if (this.compChoice === './assets/post-it.png' && this.humanChoice === rock) {
+      //   return `${this.competitors[1].name} wins!`}
+      // else if (this.compChoice === './assets/post-it.png' && this.humanChoice === scissors) {
+      //   return `${this.competitors[0].name} wins!`}
       // else if (this.compChoice === "./assets/post-it.png") {console.log('Computer wins!')}
       // else if (this.compChoice === "./assets/scissors.png") {console.log('Human wins!')}
 }
