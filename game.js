@@ -1,11 +1,14 @@
 var human = new Player ('human', '👤');
 var computer = new Player ('computer', '💻');
+var rock = './assets/rock.png';
+var paper = './assets/post-it.png';
+var scissors = './assets/scissors.png';
 
 class Game {
-  constructor() {
+  constructor(choice) {
     this.compChoice = '';
     this.gameCount = 0;
-    this.classicChoices = ["./assets/rock.png", "./assets/post-it.png", "./assets/scissors.png"];
+    this.humanChoice = choice;
     this.competitors = [];
   }
   rallyTheTroops(human, computer) {
@@ -14,19 +17,27 @@ class Game {
     this.competitors.push(human, computer)
   }
   randomCompChoice() {
-    // var classicChoices = ["assets/rock.png", "assets/post-it.png", "assets/scissors.png"];
     for (var i = 0; i < classicChoices.length; i++) {
       var randomChoice = classicChoices[Math.floor(Math.random() * classicChoices.length)]
     }
     this.compChoice = randomChoice;
     return
   }
+  showTheWinner() {
+      if (this.compChoice === this.humanChoice) {return 'its a draw!'}
+      else {return 'you lose!'}
+      // else if (this.compChoice === "./assets/post-it.png") {console.log('Computer wins!')}
+      // else if (this.compChoice === "./assets/scissors.png") {console.log('Human wins!')}
+}
   countGameNumber() {
     this.gameCount++
   }
 }
 
-var testing = new Game ();
+var testing1 = new Game (rock);
+var testing2 = new Game (paper);
+var testing3 = new Game (scissors);
+
 
 
 
