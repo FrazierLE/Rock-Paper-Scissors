@@ -1,6 +1,7 @@
 class Game {
   constructor() {
     this.compChoice = '';
+    this.gameCount = 0;
   }
   randomCompChoice() {
     var classicChoices = ["assets/rock.png", "assets/post-it.png", "assets/scissors.png"];
@@ -10,9 +11,12 @@ class Game {
     this.compChoice = randomChoice;
     return
   }
+  countGameNumber() {
+    this.gameCount++
+  }
 }
 
-var choices = new Game ();
+var testing = new Game ();
 
 
 
