@@ -17,3 +17,9 @@ class Player {
   //
   // }
 }
+
+
+
+//takeTurn method -- what exactly am I doing here?
+//human chooses what they want then game generates a random compChoice
+//

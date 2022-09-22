@@ -3,6 +3,7 @@ var computer = new Player ('Computer', '💻');
 var rock = './assets/rock.png';
 var paper = './assets/post-it.png';
 var scissors = './assets/scissors.png';
+var wait = this;
 
 class Game {
   constructor(choice) {
@@ -44,14 +45,13 @@ class Game {
         return 'Human wins!'}
       else {return 'Its a draw!'}
 }
-  updateLocalStorage(human) {
-    human.saveWinsToStorage()
-    human.retrieveWinsFromStorage()
+  updateLocalStorage(player) {
+    player.saveWinsToStorage()
+    player.retrieveWinsFromStorage()
   }
-  updateLocalStorageComputer(computer) {
-    computer.saveWinsToStorage()
-    computer.retrieveWinsFromStorage()
-  }
+  // wait() {
+  //   {setTimeout(resetGameBoard, 2000)}
+  // }
 }
 
 var testing1 = new Game (rock);
