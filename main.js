@@ -20,12 +20,10 @@ var updatingTitle = document.querySelector('#liveUpdatesTitle')
 
 //need to create a resetGameBoard function
 //create eventlistener and variable to classic div - add hidden class, remove another
-// change text h2 - for winner/choose your fighter
-// choose fighter function
-//add innerHTML for h6
+// choose fighter function?
 //add photos and rules for other game
-//keep win state, set time out method/resetGameBoard function
-//css hover on clickables
+
+
 
 difficultSection.addEventListener('click', createDifficultGameView);
 classicSection.addEventListener('click', createClassicGameView);
@@ -62,39 +60,67 @@ function changeGame() {
   updatingTitle.innerText = "Choose Your Game";
 }
 
+
+
 function chooseRock() {
-  rockChoice.rallyTheTroops(human, computer);
-  rockChoice.randomCompChoice();
+  console.log('fuck',rockChoice.rallyTheTroops(human, computer));
+  console.log('what are you picking?', rockChoice.randomCompChoice());
+  outcomeView.innerHTML = `<img src="${rockChoice.compChoice}">`;
   updatingTitle.innerText = rockChoice.showTheWinner();
-  console.log('rock', human)
-  console.log('rock', computer)
-  document.getElementById('humanWins').innerHTML = human.wins;
-  document.getElementById('compWins').innerHTML = computer.wins;
+  console.log('rock', human);
+  console.log('rock', computer);
+  showMeThatScoreBoard();
+  displayOutcome();
+  setTimeout(function(){
+      createClassicGameView();
+  }, 1500);
 }
 
 function choosePaper() {
   paperChoice.rallyTheTroops(human, computer);
   paperChoice.randomCompChoice();
+  outcomeView.innerHTML = `<img src="${paperChoice.compChoice}">`;
   updatingTitle.innerText = paperChoice.showTheWinner();
-  console.log('paper', human)
-  console.log('paper', computer)
-  document.getElementById('humanWins').innerHTML = human.wins;
-  document.getElementById('compWins').innerHTML = computer.wins;
+  console.log('paper', human);
+  console.log('paper', computer);
+  showMeThatScoreBoard();
+  displayOutcome();
+  setTimeout(function(){
+      createClassicGameView();
+  }, 1500);
 }
 
 function chooseScissors() {
-  console.log('hello')
   scissorsChoice.rallyTheTroops(human, computer);
   scissorsChoice.randomCompChoice();
+  outcomeView.innerHTML = `<img src="${scissorsChoice.compChoice}">`;
   updatingTitle.innerText = scissorsChoice.showTheWinner();
-  console.log('scissors', human)
-  console.log('scissors', computer)
+  console.log('scissors', human);
+  console.log('scissors', computer);
+  showMeThatScoreBoard();
+  displayOutcome();
+  setTimeout(function(){
+      createClassicGameView();
+  }, 1500);
+}
+
+function showMeThatScoreBoard() {
   document.getElementById('humanWins').innerHTML = human.wins;
   document.getElementById('compWins').innerHTML = computer.wins;
 }
 
+function displayOutcome() {
+  classicSection.classList.add('hidden');
+  classicView.classList.add('hidden');
+  if(rockChoice) {
+    outcomeView.innerHTML += `<img src="${'./assets/rock.png'}">`;}
+  else if (paperChoice) {outcomeView.innerHTML += `<img src="${'./assets/post-it.png'}">`;}
+  else if (scissorsChoice) {outcomeView.innerHTML += `<img src="${'./assets/scissors.png'}">`;}
+}
 
-
+function hideOutcome() {
+  outcomeView.classList.add('hidden');
+}
 
 
 

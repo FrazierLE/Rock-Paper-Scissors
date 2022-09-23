@@ -1,5 +1,6 @@
 var human = new Player ('Human', '👤');
 var computer = new Player ('Computer', '💻');
+
 var rock = './assets/rock.png';
 var paper = './assets/post-it.png';
 var scissors = './assets/scissors.png';
@@ -36,10 +37,10 @@ class Game {
       else if (this.compChoice === './assets/scissors.png' && this.humanChoice === rock) {
         this.competitors[0].wins++;
         return 'Human wins!'}
-      else if (this.compChoice === './assets/post-it.png' && this.humanChoice === rock) {
+      else if (this.compChoice === './assets/rock.png' && this.humanChoice === scissors) {
           this.competitors[1].wins++;
         return 'Computer wins!'}
-      else if (this.compChoice === './assets/post-it.png' && this.humanChoice === scissors) {
+      else if (this.compChoice === './assets/rock.png' && this.humanChoice === paper) {
         this.competitors[0].wins++;
         return 'Human wins!'}
       else {return 'Its a draw!'}
