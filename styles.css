@@ -115,6 +115,6 @@ section.main-section {
   display: none;
 }
 
-.classic:hover, .difficult:hover {
+.classic:hover, .difficult:hover, button:hover, img:hover {
   cursor: pointer;
 }

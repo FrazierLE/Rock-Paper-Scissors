@@ -14,7 +14,6 @@ class Game {
   }
     rallyTheTroops(human, computer) {
     this.competitors.push(human, computer)
-    console.log('TEST1: ', this.competitors[0].name)
   }
     randomCompChoice() {
     for (var i = 0; i < classicChoices.length; i++) {
@@ -26,37 +25,37 @@ class Game {
     showTheWinner() {
       this.gameCount++
       if (this.compChoice === './assets/post-it.png' && this.humanChoice === scissors) {
-        this.competitors[0].wins += 1;
+        this.competitors[0].wins++;
         return 'Human wins!'}
       else if (this.compChoice === './assets/post-it.png' && this.humanChoice === rock) {
-        this.competitors[1].wins += 1;
+        this.competitors[1].wins++;
         return 'Computer wins!'}
       else if (this.compChoice === './assets/scissors.png' && this.humanChoice === paper) {
-        this.competitors[1].wins += 1;
+        this.competitors[1].wins++;
         return 'Computer wins!'}
       else if (this.compChoice === './assets/scissors.png' && this.humanChoice === rock) {
-        this.competitors[0].wins += 1;
+        this.competitors[0].wins++;
         return 'Human wins!'}
       else if (this.compChoice === './assets/post-it.png' && this.humanChoice === rock) {
-          this.competitors[1].wins += 1;
+          this.competitors[1].wins++;
         return 'Computer wins!'}
       else if (this.compChoice === './assets/post-it.png' && this.humanChoice === scissors) {
-        this.competitors[0].wins += 1;
+        this.competitors[0].wins++;
         return 'Human wins!'}
       else {return 'Its a draw!'}
 }
-  updateLocalStorage(player) {
-    player.saveWinsToStorage()
-    player.retrieveWinsFromStorage()
-  }
+  // updateLocalStorage(player) {
+  //   player.saveWinsToStorage()
+  //   player.retrieveWinsFromStorage()
+  // }
   // wait() {
   //   {setTimeout(resetGameBoard, 2000)}
   // }
 }
 
-var testing1 = new Game (rock);
-var testing2 = new Game (paper);
-var testing3 = new Game (scissors);
+var rockChoice = new Game (rock);
+var paperChoice = new Game (paper);
+var scissorsChoice = new Game (scissors);
 
 
 
