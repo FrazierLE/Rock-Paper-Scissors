@@ -15,13 +15,13 @@ var classicView = document.querySelector('#classicView');
 var computerWins = document.querySelector('#compWins');
 var humanWins = document.querySelector('#humanWins');
 var button = document.querySelector('#changeGame');
+var updatingTitle = document.querySelector('#liveUpdatesTitle')
 
 //need to create a resetGameBoard function
 //create eventlistener and variable to classic div - add hidden class, remove another
 // change text h2 - for winner/choose your fighter
 // choose fighter function
 //add innerHTML for h6
-//add change game button - go home function
 //add photos and rules for other game
 //keep win state, set time out method/resetGameBoard function
 //css hover on clickables
@@ -36,6 +36,7 @@ function createDifficultGameView() {
   homePage.classList.add('hidden');
   difficultView.classList.remove('hidden');
   button.classList.remove('hidden');
+  updatingTitle.innerText = "Choose Your Fighter";
 }
 
 function createClassicGameView() {
@@ -44,6 +45,7 @@ function createClassicGameView() {
   homePage.classList.add('hidden');
   classicView.classList.remove('hidden');
   button.classList.remove('hidden');
+  updatingTitle.innerText = "Choose Your Fighter";
 }
 
 function changeGame() {
@@ -52,4 +54,5 @@ function changeGame() {
   homePage.classList.remove('hidden');
   classicView.classList.add('hidden');
   button.classList.add('hidden');
+  updatingTitle.innerText = "Choose Your Game";
 }
