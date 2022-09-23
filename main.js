@@ -9,11 +9,12 @@ var difficultPaperImage = document.querySelector('#paperDifficult');
 var difficultScissorsImage = document.querySelector('#scissorsDifficult');
 var sectionHomeView = document.querySelector('#homePage');
 var difficultView = document.querySelector('#difficultView');
-var classicView = document.querySelector('#classicView')
+var classicView = document.querySelector('#classicView');
 // var placeholder1 = document.querySelector('');
 // var placeholder1 = document.querySelector('');
 var computerWins = document.querySelector('#compWins');
 var humanWins = document.querySelector('#humanWins');
+var button = document.querySelector('#changeGame');
 
 //need to create a resetGameBoard function
 //create eventlistener and variable to classic div - add hidden class, remove another
@@ -27,18 +28,28 @@ var humanWins = document.querySelector('#humanWins');
 
 difficultSection.addEventListener('click', createDifficultGameView);
 classicSection.addEventListener('click', createClassicGameView);
-
+button.addEventListener('click', changeGame);
 
 function createDifficultGameView() {
   classicSection.classList.add('hidden');
   difficultSection.classList.add('hidden');
   homePage.classList.add('hidden');
   difficultView.classList.remove('hidden');
+  button.classList.remove('hidden');
 }
 
 function createClassicGameView() {
   classicSection.classList.add('hidden');
   difficultSection.classList.add('hidden');
   homePage.classList.add('hidden');
-  classicView.classList.remove('hidden')
+  classicView.classList.remove('hidden');
+  button.classList.remove('hidden');
+}
+
+function changeGame() {
+  classicSection.classList.remove('hidden');
+  difficultSection.classList.remove('hidden');
+  homePage.classList.remove('hidden');
+  classicView.classList.add('hidden');
+  button.classList.add('hidden');
 }
