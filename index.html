@@ -10,6 +10,9 @@
       <h4>Human</h4>
       <h5>Wins: </h5>
       <h6 id="humanWins"</h6>
+        <div class="flex">
+          <button id="changeGame">
+        </div>
     </section>
     <main>
       <section class="main-section">
@@ -17,16 +20,16 @@
         <h1>Rock, Paper, Scissors</h1>
         <h2>Choose Your Game!</h2>
         </div>
-      <section class="flex home-page">
-        <div class="rules classic flex">
+      <section class="flex home-page" id="homePage">
+        <div class="rules classic flex" id="classicClickable">
           <h3 class="flex">Classic</h3>
             <ul class="flex">
-              <li>rule 1</li>
-              <li>rule 2</li>
-              <li> rule 3</li>
+              <li>rock > scissors</li>
+              <li>scissors > paper</li>
+              <li> paper > rock</li>
             </ul>
         </div>
-        <div class="rules difficult flex">
+        <div class="rules difficult flex" id="difficultClickable">
           <h3 class="flex">Difficult</h3>
           <ul class="flex">
             <li>rule</li>
@@ -37,13 +40,13 @@
           </ul>
         </div>
       </section>
-      <section class="flex classic-view hidden">
+      <section class="flex classic-view hidden" id="classicView">
         <!-- Will need to change h2 -->
         <img id="rockClassic" src="assets/rock.png" alt="rock">
         <img id="paperClassic" src="assets/post-it.png" alt="paper">
         <img id="scissorsClassic" src="assets/scissors.png" alt="scissors">
       </section>
-      <section class="flex difficult-view hidden">
+      <section class="flex difficult-view hidden" id="difficultView">
         <!-- Will need to change h2 -->
         <img id="rockDifficult" src="assets/rock.png" alt="rock">
         <img id="paperDifficult" src="assets/post-it.png" alt="paper">

@@ -114,3 +114,7 @@ section.main-section {
 .hidden {
   display: none;
 }
+
+.classic:hover, .difficult:hover {
+  cursor: pointer;
+}
