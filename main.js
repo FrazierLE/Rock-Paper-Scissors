@@ -1,5 +1,6 @@
-var classicChoices = ['./assets/rock.png', './assets/post-it.png', './assets/scissors.png'];
-var difficultChoices = ['./assets/rock.png', './assets/post-it.png', './assets/scissors.png', './assets/cowboy.png', './assets/cartoon-gun.png']
+var classicChoices;
+var difficultChoices;
+var selectedGameType;
 
 var classicSection = document.querySelector('#classicClickable');
 var difficultSection = document.querySelector('#difficultClickable');
@@ -37,6 +38,8 @@ difficultPaperImage.addEventListener('click', choosePaper);
 difficultScissorsImage.addEventListener('click', chooseScissors);
 cowboyImage.addEventListener('click', chooseCowboy);
 revolverImage.addEventListener('click', chooseGun);
+classicSection.addEventListener('click', pickClassic);
+difficultSection.addEventListener('click', pickDifficult);
 
 function createDifficultGameView() {
   classicSection.classList.add('hidden');
@@ -67,18 +70,27 @@ function changeGame() {
   updatingTitle.innerText = "Choose Your Game";
 }
 
+function pickClassic() {
+  classicChoices = ['./assets/rock.png', './assets/post-it.png', './assets/scissors.png'];
+  selectedGameType = 'classic';
+  return
+}
+
+function pickDifficult(event) {
+  console.log('hello')
+  difficultChoices = ['./assets/rock.png', './assets/post-it.png', './assets/scissors.png', './assets/cowboy.png', './assets/cartoon-gun.png'];
+  selectedGameType = 'difficult';
+  return
+}
+
 function chooseRock() {
-  console.log('fuck',rockChoice.rallyTheTroops(human, computer));
-  console.log('what are you picking?', rockChoice.randomCompChoice());
+  rockChoice.rallyTheTroops(human, computer);
+  rockChoice.randomCompChoice();
   outcomeView.innerHTML = `<img src="${rockChoice.compChoice}"> <img src="${rockChoice.humanChoice}"> `;
   updatingTitle.innerText = rockChoice.showTheWinner();
-  console.log('rock', human);
-  console.log('rock', computer);
   showMeThatScoreBoard();
   displayOutcome();
-  setTimeout(function(){
-      createClassicGameView();
-  }, 1500);
+  setTimeout(createClassicGameView, 1500);
 }
 
 function choosePaper() {
@@ -146,11 +158,11 @@ function showMeThatScoreBoard() {
 function displayOutcome() {
   classicSection.classList.add('hidden');
   classicView.classList.add('hidden');
-  // setTimeout(function() {
-  //   outcomeView.classList.add('hidden');
-  // }, 1500)
+  outcomeView.classList.remove('hidden');
+  setTimeout(function() {
+    outcomeView.classList.add('hidden');
+  }, 1500)
 }
-
 
 
 

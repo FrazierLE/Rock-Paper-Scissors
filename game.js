@@ -8,24 +8,27 @@ var cowboy = './assets/cowboy.png';
 var gun = './assets/cartoon-gun.png';
 
 class Game {
-  constructor(choice) {
+  constructor(choice, selectedGameType) {
     this.compChoice = '';
     this.gameCount = 0;
     this.humanChoice = choice;
     this.competitors = [];
+    this.selectedGameType = selectedGameType;
   }
     rallyTheTroops(human, computer) {
     this.competitors.push(human, computer)
   }
     randomCompChoice() {
-      // var randomChoice = classicChoices[Math.floor(Math.random() * classicChoices.length)]
-      // this.compChoice = randomChoice;
-      // return
-      var randomChoice = difficultChoices[Math.floor(Math.random() * difficultChoices.length)]
-      this.compChoice = randomChoice;
-      return
-
-  }
+      console.log('hi', classicChoices)
+      if (this.selectedGameType === 'classic') {
+        var randomChoice = classicChoices[Math.floor(Math.random() * 3)]
+        console.log('hello', randomChoice)
+        this.compChoice = randomChoice;
+        console.log('what did you choose', rockChoice.compChoice)}
+      else {
+        var randomChoice = difficultChoices[Math.floor(Math.random() * 5)]
+        this.compChoice = randomChoice;}
+    }
 
     showTheWinner() {
       this.gameCount++
@@ -48,34 +51,34 @@ class Game {
       //   this.competitors[0].wins++;
       //   return 'Human wins!'}
 
-      if (this.compChoice === './assets/post-it.png' && this.humanChoice === scissors || cowboy) {
+      if (this.compChoice === './assets/post-it.png' && (this.humanChoice === scissors || this.humanChoice === cowboy)) {
         this.competitors[0].wins++;
         return 'Human wins!'}
-      else if (this.compChoice === './assets/post-it.png' && this.humanChoice === rock || gun) {
+      else if (this.compChoice === './assets/post-it.png' && (this.humanChoice === rock || this.humanChoice === gun)) {
         this.competitors[1].wins++;
         return 'Computer wins!'}
-      else if (this.compChoice === './assets/scissors.png' && this.humanChoice === paper || cowboy) {
+      else if (this.compChoice === './assets/scissors.png' && (this.humanChoice === paper || this.humanChoice === cowboy)) {
         this.competitors[1].wins++;
         return 'Computer wins!'}
-      else if (this.compChoice === './assets/scissors.png' && this.humanChoice === rock || gun) {
+      else if (this.compChoice === './assets/scissors.png' && (this.humanChoice === rock || this.humanChoice === gun)) {
         this.competitors[0].wins++;
         return 'Human wins!'}
-      else if (this.compChoice === './assets/rock.png' && this.humanChoice === scissors || cowboy) {
+      else if (this.compChoice === './assets/rock.png' && (this.humanChoice === scissors || this.humanChoice === cowboy)) {
           this.competitors[1].wins++;
         return 'Computer wins!'}
-      else if (this.compChoice === './assets/rock.png' && this.humanChoice === paper || gun) {
+      else if (this.compChoice === './assets/rock.png' && (this.humanChoice === paper || this.humanChoice === gun)) {
         this.competitors[0].wins++;
         return 'Human wins!'}
-      else if (this.compChoice === './assets/cowboy.png' && this.humanChoice === scissors || rock) {
+      else if (this.compChoice === './assets/cowboy.png' && (this.humanChoice === scissors || this.humanChoice === rock)){
           this.competitors[0].wins++;
           return 'Human wins!'}
-      else if (this.compChoice === './assets/cowboy.png' && this.humanChoice === paper || gun) {
+      else if (this.compChoice === './assets/cowboy.png' && (this.humanChoice === paper || this.humanChoice === gun)) {
           this.competitors[1].wins++;
-          return 'Computer wins!'}    
-      else if (this.compChoice === './assets/cartoon-gun.png' && this.humanChoice === paper || cowboy) {
+          return 'Computer wins!'}
+      else if (this.compChoice === './assets/cartoon-gun.png' && (this.humanChoice === paper || this.humanChoice === cowboy)) {
           this.competitors[0].wins++;
           return 'Human wins!'}
-      else if (this.compChoice === './assets/cartoon-gun.png' && this.humanChoice === rock || scissors) {
+      else if (this.compChoice === './assets/cartoon-gun.png' && (this.humanChoice === rock || this.humanChoice === scissors)) {
           this.competitors[1].wins++;
           return 'Computer wins!'}
       else {return 'Its a draw!'}
@@ -89,24 +92,15 @@ class Game {
   // }
 }
 
-var rockChoice = new Game (rock);
-var paperChoice = new Game (paper);
-var scissorsChoice = new Game (scissors);
-var cowboyChoice = new Game (cowboy);
-var gunChoice = new Game (gun);
+//Classic Choices
+var rockChoice = new Game (rock, 'classic');
+var paperChoice = new Game (paper, 'classic');
+var scissorsChoice = new Game (scissors, 'classic');
+//Difficult Choices
+var cowboyChoice = new Game (cowboy, 'difficult');
+var gunChoice = new Game (gun, 'difficult');
 
 
-
-
-
-
-
-
-
-//classic game logic :
-// rock > scissors
-//scissors > paper
-// paper > rock
 
 
 //update innerHTML of h2 for who wins
