@@ -8,9 +8,9 @@ var sectionHomeView = document.querySelector('#homePage');
 var difficultView = document.querySelector('#difficultView');
 var classicView = document.querySelector('#classicView');
 var outcomeView = document.querySelector('#outcomeView');
-// var difficultRockImage = document.querySelector('#rockDifficult');
-// var difficultPaperImage = document.querySelector('#paperDifficult');
-// var difficultScissorsImage = document.querySelector('#scissorsDifficult');
+var difficultRockImage = document.querySelector('#rockDifficult');
+var difficultPaperImage = document.querySelector('#paperDifficult');
+var difficultScissorsImage = document.querySelector('#scissorsDifficult');
 // var placeholder1 = document.querySelector('');
 // var placeholder1 = document.querySelector('');
 var computerWins = document.querySelector('#compWins');
@@ -30,6 +30,9 @@ button.addEventListener('click', changeGame);
 classicRockImage.addEventListener('click', chooseRock);
 classicPaperImage.addEventListener('click', choosePaper);
 classicScissorsImage.addEventListener('click', chooseScissors);
+difficultRockImage.addEventListener('click', chooseRock);
+difficultPaperImage.addEventListener('click', choosePaper);
+difficultScissorsImage.addEventListener('click', chooseScissors);
 
 function createDifficultGameView() {
   classicSection.classList.add('hidden');
@@ -55,11 +58,10 @@ function changeGame() {
   difficultSection.classList.remove('hidden');
   homePage.classList.remove('hidden');
   classicView.classList.add('hidden');
+  difficultView.classList.add('hidden');
   button.classList.add('hidden');
   updatingTitle.innerText = "Choose Your Game";
 }
-
-
 
 function chooseRock() {
   console.log('fuck',rockChoice.rallyTheTroops(human, computer));
