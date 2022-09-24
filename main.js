@@ -1,4 +1,6 @@
 var classicChoices = ['./assets/rock.png', './assets/post-it.png', './assets/scissors.png'];
+var difficultChoices = ['./assets/rock.png', './assets/post-it.png', './assets/scissors.png', './assets/cowboy.png', './assets/cartoon-gun.png']
+
 var classicSection = document.querySelector('#classicClickable');
 var difficultSection = document.querySelector('#difficultClickable');
 var classicRockImage = document.querySelector('#rockClassic');
@@ -11,8 +13,8 @@ var outcomeView = document.querySelector('#outcomeView');
 var difficultRockImage = document.querySelector('#rockDifficult');
 var difficultPaperImage = document.querySelector('#paperDifficult');
 var difficultScissorsImage = document.querySelector('#scissorsDifficult');
-var cowboy = document.querySelector('#cowboy');
-var revolver = document.querySelector('#gun');
+var cowboyImage = document.querySelector('#cowboy');
+var revolverImage = document.querySelector('#gun');
 var computerWins = document.querySelector('#compWins');
 var humanWins = document.querySelector('#humanWins');
 var button = document.querySelector('#changeGame');
@@ -33,6 +35,8 @@ classicScissorsImage.addEventListener('click', chooseScissors);
 difficultRockImage.addEventListener('click', chooseRock);
 difficultPaperImage.addEventListener('click', choosePaper);
 difficultScissorsImage.addEventListener('click', chooseScissors);
+cowboyImage.addEventListener('click', chooseCowboy);
+revolverImage.addEventListener('click', chooseGun);
 
 function createDifficultGameView() {
   classicSection.classList.add('hidden');
@@ -93,7 +97,6 @@ function choosePaper() {
 }
 
 function chooseScissors() {
-  console.log('hiii')
   scissorsChoice.rallyTheTroops(human, computer);
   scissorsChoice.randomCompChoice();
   outcomeView.innerHTML = `<img src="${scissorsChoice.compChoice}"><img src="${scissorsChoice.humanChoice}"> `;
@@ -104,6 +107,34 @@ function chooseScissors() {
   displayOutcome();
   setTimeout(function(){
       createClassicGameView();
+  }, 1500);
+}
+
+function chooseCowboy() {
+  cowboyChoice.rallyTheTroops(human, computer);
+  cowboyChoice.randomCompChoice();
+  outcomeView.innerHTML = `<img src="${cowboyChoice.compChoice}"><img src="${cowboyChoice.humanChoice}"> `;
+  updatingTitle.innerText = cowboyChoice.showTheWinner();
+  console.log('cowboy', human);
+  console.log('cowboy', computer);
+  showMeThatScoreBoard();
+  displayOutcome();
+  setTimeout(function(){
+      createDifficultGameView();
+  }, 1500);
+}
+
+function chooseGun() {
+  gunChoice.rallyTheTroops(human, computer);
+  gunChoice.randomCompChoice();
+  outcomeView.innerHTML = `<img src="${gunChoice.compChoice}"><img src="${gunChoice.humanChoice}"> `;
+  updatingTitle.innerText = gunChoice.showTheWinner();
+  console.log('gun', human);
+  console.log('gun', computer);
+  showMeThatScoreBoard();
+  displayOutcome();
+  setTimeout(function(){
+      createDifficultGameView();
   }, 1500);
 }
 
