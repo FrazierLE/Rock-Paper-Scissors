@@ -111,6 +111,20 @@ section.main-section {
   justify-content: space-evenly;
 }
 
+.difficult-view {
+  width: 70vw;
+}
+
 .hidden {
   display: none;
+}
+
+.classic:hover, .difficult:hover, button:hover, img:hover {
+  cursor: pointer;
+}
+
+.difficultView {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
