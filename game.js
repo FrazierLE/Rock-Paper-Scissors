@@ -17,11 +17,10 @@ class Game {
     this.competitors.push(human, computer)
   }
     randomCompChoice() {
-    for (var i = 0; i < classicChoices.length; i++) {
       var randomChoice = classicChoices[Math.floor(Math.random() * classicChoices.length)]
-    }
-    this.compChoice = randomChoice;
-    return
+      this.compChoice = randomChoice;
+      return
+
   }
     showTheWinner() {
       this.gameCount++
