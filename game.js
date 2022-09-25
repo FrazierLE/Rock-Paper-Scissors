@@ -19,12 +19,9 @@ class Game {
     this.competitors.push(human, computer)
   }
     randomCompChoice() {
-      console.log('hi', classicChoices)
       if (this.selectedGameType === 'classic') {
         var randomChoice = classicChoices[Math.floor(Math.random() * 3)]
-        console.log('hello', randomChoice)
-        this.compChoice = randomChoice;
-        console.log('what did you choose', rockChoice.compChoice)}
+        this.compChoice = randomChoice;}
       else {
         var randomChoice = difficultChoices[Math.floor(Math.random() * 5)]
         this.compChoice = randomChoice;}
@@ -32,25 +29,6 @@ class Game {
 
     showTheWinner() {
       this.gameCount++
-      // if (this.compChoice === './assets/post-it.png' && this.humanChoice === scissors) {
-      //   this.competitors[0].wins++;
-      //   return 'Human wins!'}
-      // else if (this.compChoice === './assets/post-it.png' && this.humanChoice === rock) {
-      //   this.competitors[1].wins++;
-      //   return 'Computer wins!'}
-      // else if (this.compChoice === './assets/scissors.png' && this.humanChoice === paper) {
-      //   this.competitors[1].wins++;
-      //   return 'Computer wins!'}
-      // else if (this.compChoice === './assets/scissors.png' && this.humanChoice === rock) {
-      //   this.competitors[0].wins++;
-      //   return 'Human wins!'}
-      // else if (this.compChoice === './assets/rock.png' && this.humanChoice === scissors) {
-      //     this.competitors[1].wins++;
-      //   return 'Computer wins!'}
-      // else if (this.compChoice === './assets/rock.png' && this.humanChoice === paper) {
-      //   this.competitors[0].wins++;
-      //   return 'Human wins!'}
-
       if (this.compChoice === './assets/post-it.png' && (this.humanChoice === scissors || this.humanChoice === cowboy)) {
         this.competitors[0].wins++;
         return 'Human wins!'}
@@ -97,6 +75,9 @@ var rockChoice = new Game (rock, 'classic');
 var paperChoice = new Game (paper, 'classic');
 var scissorsChoice = new Game (scissors, 'classic');
 //Difficult Choices
+var difficultRock = new Game (rock, 'difficult');
+var difficultPaper = new Game (paper, 'difficult');
+var difficultScissors = new Game (scissors, 'difficult');
 var cowboyChoice = new Game (cowboy, 'difficult');
 var gunChoice = new Game (gun, 'difficult');
 
