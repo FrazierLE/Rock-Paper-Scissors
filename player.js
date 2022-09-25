@@ -4,6 +4,9 @@ class Player {
     this.token = token;
     this.wins = 0;
   }
+  takeTurn() {
+    
+  }
   // saveWinsToStorage() {
   //     var storeMe = this.wins;
   //     var stringified = JSON.stringify(storeMe);

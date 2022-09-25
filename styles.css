@@ -44,8 +44,8 @@ ul {
 }
 
 img {
-  height: 5vh;
-  width: 5vh;
+  height: 10vh;
+  width: 10vh;
   border: 1px solid green;
 }
 
@@ -104,8 +104,8 @@ section.main-section {
 
 .classic-view, .difficult-view {
   border: 1px solid blue;
-  width: 20vw;
-  height: 20vh;
+  width: 40vw;
+  height: 40vh;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
