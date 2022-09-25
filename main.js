@@ -196,14 +196,3 @@ function displayOutcome() {
     outcomeView.classList.add('hidden');
   }, 1500)
 }
-
-
-
-
-
-
-
-
-
-
-//want more room to code

@@ -65,9 +65,7 @@ class Game {
   //   player.saveWinsToStorage()
   //   player.retrieveWinsFromStorage()
   // }
-  // wait() {
-  //   {setTimeout(resetGameBoard, 2000)}
-  // }
+
 }
 
 //Classic Choices
@@ -80,8 +78,3 @@ var difficultPaper = new Game (paper, 'difficult');
 var difficultScissors = new Game (scissors, 'difficult');
 var cowboyChoice = new Game (cowboy, 'difficult');
 var gunChoice = new Game (gun, 'difficult');
-
-
-
-
-//update innerHTML of h2 for who wins
