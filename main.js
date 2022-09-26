@@ -83,7 +83,7 @@ function displayOutcome() {
   outcomeView.classList.remove('hidden');
   setTimeout(function() {
     outcomeView.classList.add('hidden');
-  }, 1500)
+  }, 1500);
 }
 
 function displayTheChosenOnes(game) {

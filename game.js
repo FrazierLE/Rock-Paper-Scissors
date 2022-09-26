@@ -5,10 +5,10 @@ class Game {
     this.humanChoice = choice;
     this.competitors = [];
     this.selectedGameType = selectedGameType;
-  }
+    }
     rallyTheTroops(human, computer) {
     this.competitors.push(human, computer)
-  }
+    }
     randomCompChoice() {
       if (this.selectedGameType === 'classic') {
         var randomChoice = classicChoices[Math.floor(Math.random() * 3)]
@@ -17,7 +17,6 @@ class Game {
         var randomChoice = difficultChoices[Math.floor(Math.random() * 5)]
         this.compChoice = randomChoice;}
     }
-
     showTheWinner() {
       this.gameCount++
       if (this.compChoice === paper && (this.humanChoice === scissors || this.humanChoice === cowboy)) {
