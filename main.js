@@ -52,7 +52,6 @@ function changeGame() {
 }
 
 function pickClassic() {
-  // classicChoices = ['./assets/rock.png', './assets/post-it.png', './assets/scissors.png'];
   classicChoices = [rock, paper, scissors];
   selectedGameType = 'classic';
   return
@@ -60,7 +59,6 @@ function pickClassic() {
 
 function pickDifficult() {
   difficultChoices = [rock, paper, scissors, cowboy, gun];
-  // difficultChoices = ['./assets/rock.png', './assets/post-it.png', './assets/scissors.png', './assets/cowboy.png', './assets/cartoon-gun.png'];
   selectedGameType = 'difficult';
   return
 }
@@ -80,8 +78,6 @@ function displayOutcome() {
     outcomeView.classList.add('hidden');
   }, 1500)
 }
-
-var game;
 
 var weaponsC = document.querySelectorAll('.classicWeapons');
 for (var i = 0; i < weaponsC.length; i++) {
