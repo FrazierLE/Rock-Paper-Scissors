@@ -61,9 +61,5 @@ class Game {
           return 'Computer wins!'}
       else {return 'Its a draw!'}
 
-}
-  // updateLocalStorage(player) {
-  //   player.saveWinsToStorage()
-  //   player.retrieveWinsFromStorage()
-  // }
+    }
 }
