@@ -86,15 +86,20 @@ function displayOutcome() {
   }, 1500)
 }
 
+function runIt(game) {
+  game.rallyTheTroops(human, computer);
+  game.randomCompChoice()
+  outcomeView.innerHTML = `<img src="${game.compChoice}"><img src="${game.humanChoice}"> `;
+  updatingTitle.innerText = game.showTheWinner();
+}
+
+
 var weaponsC = document.querySelectorAll('.classicWeapons');
 for (var i = 0; i < weaponsC.length; i++) {
   weaponsC[i].addEventListener('click', function (event) {
     var choice1 = event.target.src
-    classic = new Game (choice1, 'classic');
-    classic.rallyTheTroops(human, computer);
-    classic.randomCompChoice()
-    outcomeView.innerHTML = `<img src="${classic.compChoice}"><img src="${classic.humanChoice}"> `;
-    updatingTitle.innerText = classic.showTheWinner();
+    var classic = new Game (choice1, 'classic');
+    runIt(classic)
     showMeThatScoreBoard();
     displayOutcome();
     setTimeout(function(){
@@ -106,13 +111,10 @@ for (var i = 0; i < weaponsC.length; i++) {
 
 var weaponsD = document.querySelectorAll('.difficultWeapons');
 for (var i = 0; i < weaponsD.length; i++) {
-  weaponsD[i].addEventListener('click', function () {
+  weaponsD[i].addEventListener('click', function (event) {
     var choice2 = event.target.src
-    difficult = new Game (choice2, 'difficult');
-    difficult.rallyTheTroops(human, computer);
-    difficult.randomCompChoice()
-    outcomeView.innerHTML = `<img src="${difficult.compChoice}"><img src="${difficult.humanChoice}"> `;
-    updatingTitle.innerText = difficult.showTheWinner();
+    var difficult = new Game (choice2, 'difficult');
+    runIt(difficult)
     showMeThatScoreBoard();
     displayOutcome();
     setTimeout(function(){
