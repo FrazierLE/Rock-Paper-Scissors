@@ -1,12 +1,3 @@
-var human = new Player ('Human', '👤');
-var computer = new Player ('Computer', '💻');
-
-var rock = document.querySelector('#rockClassic').src;
-var paper = document.querySelector('#paperClassic').src;
-var scissors = document.querySelector('#scissorsClassic').src;
-var cowboy = document.querySelector('#cowboy').src;
-var gun = document.querySelector('#gun').src;
-
 class Game {
   constructor(choice, selectedGameType) {
     this.compChoice = '';
