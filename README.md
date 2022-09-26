@@ -9,6 +9,7 @@ Step 3: cd into the project using the terminal
 Step 4: open it up on a browser by typing 'index.html' into the terminal
 
 Preview of App:
+
 <img width="722" alt="Screen Shot 2022-09-26 at 3 28 47 PM" src="https://user-images.githubusercontent.com/108101979/192384400-d977e52a-351b-44ad-85b4-ffd7c5aceb39.png">
 
 Context:
