@@ -43,8 +43,6 @@ h6 {
 }
 
 ul {
-  flex-direction: column;
-  align-items: center;
   list-style: none;
   margin-right: 10%;
 }
@@ -57,12 +55,12 @@ img {
 .flex {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
   margin-bottom: 10%;
-  flex-direction: column;
-  align-items: center;
   width: 100vh;
   color: white;
 }
@@ -70,14 +68,11 @@ img {
 .human, .computer {
   width: 15%;
   height: 100vh;
-  flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
   color: white;
 }
 
 section.main-section {
-  align-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,7 +80,6 @@ section.main-section {
 }
 
 .home-page {
-  flex-direction: column;
   width: 40%;
   height: 50vh;
 }
@@ -94,20 +88,23 @@ section.main-section {
   margin: 5% 0;
   height: 80vh;
   width: 100%;
-  flex-direction: column;
   font-size: 1.9rem;
   color: black;
   border: 1px solid black;
   border-radius: 5px;
 }
 
-.classic-view, .difficult-view {
+section.classic-view, section.difficult-view, section.outcome-view {
   width: 40vw;
   height: 40vh;
   flex-direction: row;
-  align-items: center;
   justify-content: space-evenly;
   color: white;
+}
+
+section.difficult-view {
+  justify-content: space-between;
+  width: 80%;
 }
 
 .difficult-view {
@@ -127,7 +124,5 @@ button:hover {
 }
 
 .difficultView {
-  display: flex;
   justify-content: space-evenly;
-  align-items: center;
 }
