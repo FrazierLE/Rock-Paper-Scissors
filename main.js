@@ -58,7 +58,6 @@ function changeGame() {
   updatingTitle.innerText = "Choose Your Game";
 }
 
-
 function pickClassic() {
   classicChoices = [rock, paper, scissors];
   selectedGameType = 'classic';
@@ -87,14 +86,14 @@ function displayOutcome() {
   }, 1500)
 }
 
-function runIt(game) {
+function displayTheChosenOnes(game) {
   game.rallyTheTroops(human, computer);
   game.randomCompChoice()
   outcomeView.innerHTML = `<img src="${game.compChoice}"><img src="${game.humanChoice}"> `;
   updatingTitle.innerText = game.showTheWinner();
 }
 
-function replay() {
+function runItBack() {
   if(selectedGameType === 'classic') {displayOutcome();
   setTimeout(function(){
       createClassicGameView()
@@ -110,8 +109,8 @@ for (var i = 0; i < weapons.length; i++) {
   weapons[i].addEventListener('click', function (event) {
     var choice = event.target.src;
     var game = new Game (choice, selectedGameType);
-    replay()
-    runIt(game);
+    runItBack()
+    displayTheChosenOnes(game);
     showMeThatScoreBoard();
     displayOutcome();
   } );
