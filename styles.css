@@ -56,10 +56,10 @@ img {
 
 .title {
   margin-bottom: 10%;
-  border: 3px solid gray;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 100vh;
 }
 
 .human, .computer {
