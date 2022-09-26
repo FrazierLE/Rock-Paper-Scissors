@@ -3,7 +3,7 @@ html {
   font-family: 'Roboto', sans-serif;
   height: 100vh;
   width: 100vw;
-  background-image: url(https://nypost.com/wp-content/uploads/sites/2/2014/06/rock-paper.jpg?quality=75&strip=all);
+  background-image: url('assets/background-img.webp');
   background-size: contain;
 }
 
