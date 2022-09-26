@@ -4,9 +4,6 @@ var selectedGameType;
 
 var classicSection = document.querySelector('#classicClickable');
 var difficultSection = document.querySelector('#difficultClickable');
-// var classicRockImage = document.querySelector('#rockClassic');
-// var classicPaperImage = document.querySelector('#paperClassic');
-// var classicScissorsImage = document.querySelector('#scissorsClassic');
 var sectionHomeView = document.querySelector('#homePage');
 var difficultView = document.querySelector('#difficultView');
 var classicView = document.querySelector('#classicView');
@@ -14,8 +11,6 @@ var outcomeView = document.querySelector('#outcomeView');
 var difficultRockImage = document.querySelector('#rockDifficult');
 var difficultPaperImage = document.querySelector('#paperDifficult');
 var difficultScissorsImage = document.querySelector('#scissorsDifficult');
-// var cowboyImage = document.querySelector('#cowboy');
-// var revolverImage = document.querySelector('#gun');
 var computerWins = document.querySelector('#compWins');
 var humanWins = document.querySelector('#humanWins');
 var button = document.querySelector('#changeGame');
@@ -24,14 +19,6 @@ var updatingTitle = document.querySelector('#liveUpdatesTitle');
 difficultSection.addEventListener('click', createDifficultGameView);
 classicSection.addEventListener('click', createClassicGameView);
 button.addEventListener('click', changeGame);
-// classicRockImage.addEventListener('click', chooseClassicRock);
-// classicPaperImage.addEventListener('click', chooseClassicPaper);
-// classicScissorsImage.addEventListener('click', chooseClassicScissors);
-// difficultRockImage.addEventListener('click', chooseDifficultRock);
-// difficultPaperImage.addEventListener('click', chooseDifficultPaper);
-// difficultScissorsImage.addEventListener('click', chooseDifficultScissors);
-// cowboyImage.addEventListener('click', chooseCowboy);
-// revolverImage.addEventListener('click', chooseGun);
 classicSection.addEventListener('click', pickClassic);
 difficultSection.addEventListener('click', pickDifficult);
 
@@ -78,108 +65,6 @@ function pickDifficult() {
   return
 }
 
-
-
-// function chooseClassicRock() {
-//   rockChoice.rallyTheTroops(human, computer);
-//   rockChoice.randomCompChoice();
-//   outcomeView.innerHTML = `<img src="${rockChoice.compChoice}"> <img src="${rockChoice.humanChoice}"> `;
-//   updatingTitle.innerText = rockChoice.showTheWinner();
-//   showMeThatScoreBoard();
-//   displayOutcome();
-//   setTimeout(function(){
-//       if(selectedGameType === 'classic') {createClassicGameView()} else {createDifficultGameView()}
-//   }, 1500);
-// }
-//
-// function chooseClassicPaper() {
-//   paperChoice.rallyTheTroops(human, computer);
-//   paperChoice.randomCompChoice();
-//   outcomeView.innerHTML = `<img src="${paperChoice.compChoice}"> <img src="${paperChoice.humanChoice}"> `;
-//   updatingTitle.innerText = paperChoice.showTheWinner();
-//   showMeThatScoreBoard();
-//   displayOutcome();
-//   setTimeout(function(){
-//       if(selectedGameType === 'classic') {createClassicGameView()} else {createDifficultGameView()}
-//   }, 1500);
-// }
-//
-// function chooseClassicScissors() {
-//   scissorsChoice.rallyTheTroops(human, computer);
-//   scissorsChoice.randomCompChoice();
-//   outcomeView.innerHTML = `<img src="${scissorsChoice.compChoice}"><img src="${scissorsChoice.humanChoice}"> `;
-//   updatingTitle.innerText = scissorsChoice.showTheWinner();
-//   showMeThatScoreBoard();
-//   displayOutcome();
-//   setTimeout(function(){
-//       if(selectedGameType === 'classic') {createClassicGameView()} else {createDifficultGameView()}
-//   }, 1500);
-// }
-//
-// function chooseDifficultRock() {
-//   difficultRock.rallyTheTroops(human, computer);
-//   difficultRock.randomCompChoice();
-//   outcomeView.innerHTML = `<img src="${difficultRock.compChoice}"> <img src="${difficultRock.humanChoice}"> `;
-//   updatingTitle.innerText = difficultRock.showTheWinner();
-//   showMeThatScoreBoard();
-//   displayOutcome();
-//   setTimeout(function(){
-//       if(selectedGameType === 'classic') {createClassicGameView()} else {createDifficultGameView()}
-//   }, 1500);
-// }
-//
-// function chooseDifficultPaper() {
-//   difficultPaper.rallyTheTroops(human, computer);
-//   difficultPaper.randomCompChoice();
-//   outcomeView.innerHTML = `<img src="${difficultPaper.compChoice}"> <img src="${difficultPaper.humanChoice}"> `;
-//   updatingTitle.innerText = difficultPaper.showTheWinner();
-//   showMeThatScoreBoard();
-//   displayOutcome();
-//   setTimeout(function(){
-//       if(selectedGameType === 'classic') {createClassicGameView()} else {createDifficultGameView()}
-//   }, 1500);
-// }
-//
-// function chooseDifficultScissors() {
-//   difficultScissors.rallyTheTroops(human, computer);
-//   difficultScissors.randomCompChoice();
-//   outcomeView.innerHTML = `<img src="${difficultScissors.compChoice}"> <img src="${difficultScissors.humanChoice}"> `;
-//   updatingTitle.innerText = difficultScissors.showTheWinner();
-//   showMeThatScoreBoard();
-//   displayOutcome();
-//   setTimeout(function(){
-//       if(selectedGameType === 'classic') {createClassicGameView()} else {createDifficultGameView()}
-//   }, 1500);
-// }
-//
-// function chooseCowboy() {
-//   cowboyChoice.rallyTheTroops(human, computer);
-//   cowboyChoice.randomCompChoice();
-//   outcomeView.innerHTML = `<img src="${cowboyChoice.compChoice}"><img src="${cowboyChoice.humanChoice}"> `;
-//   updatingTitle.innerText = cowboyChoice.showTheWinner();
-//   showMeThatScoreBoard();
-//   displayOutcome();
-//   setTimeout(function(){
-//       if(selectedGameType === 'classic') {createClassicGameView()} else {createDifficultGameView()}
-//   }, 1500);
-// }
-//
-// function chooseGun() {
-//   gunChoice.rallyTheTroops(human, computer);
-//   gunChoice.randomCompChoice();
-//   outcomeView.innerHTML = `<img src="${gunChoice.compChoice}"><img src="${gunChoice.humanChoice}"> `;
-//   updatingTitle.innerText = gunChoice.showTheWinner();
-//   showMeThatScoreBoard();
-//   displayOutcome();
-//   setTimeout(function(){
-//       if(selectedGameType === 'classic') {createClassicGameView()} else {createDifficultGameView()}
-//   }, 1500);
-// }
-
-
-
-
-
 function showMeThatScoreBoard() {
   document.getElementById('humanWins').innerHTML = human.wins;
   document.getElementById('compWins').innerHTML = computer.wins;
@@ -201,7 +86,6 @@ var game;
 var weaponsC = document.querySelectorAll('.classicWeapons');
 for (var i = 0; i < weaponsC.length; i++) {
   weaponsC[i].addEventListener('click', function (event) {
-    pickClassic()
     var choice1 = event.target.src
     classic = new Game (choice1, 'classic');
     classic.rallyTheTroops(human, computer);
