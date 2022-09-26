@@ -58,6 +58,7 @@ function changeGame() {
   updatingTitle.innerText = "Choose Your Game";
 }
 
+
 function pickClassic() {
   classicChoices = [rock, paper, scissors];
   selectedGameType = 'classic';
@@ -93,33 +94,25 @@ function runIt(game) {
   updatingTitle.innerText = game.showTheWinner();
 }
 
-
-var weaponsC = document.querySelectorAll('.classicWeapons');
-for (var i = 0; i < weaponsC.length; i++) {
-  weaponsC[i].addEventListener('click', function (event) {
-    var choice1 = event.target.src
-    var classic = new Game (choice1, 'classic');
-    runIt(classic)
-    showMeThatScoreBoard();
-    displayOutcome();
-    setTimeout(function(){
+function replay() {
+  if(selectedGameType === 'classic') {displayOutcome();
+  setTimeout(function(){
       createClassicGameView()
-        }, 1500);
-    return
-  } )
+    }, 1500);}
+  else {displayOutcome();
+  setTimeout(function(){
+      createDifficultGameView()
+    }, 1500);}
 }
 
-var weaponsD = document.querySelectorAll('.difficultWeapons');
-for (var i = 0; i < weaponsD.length; i++) {
-  weaponsD[i].addEventListener('click', function (event) {
-    var choice2 = event.target.src
-    var difficult = new Game (choice2, 'difficult');
-    runIt(difficult)
+var weapons = document.querySelectorAll('.weapons');
+for (var i = 0; i < weapons.length; i++) {
+  weapons[i].addEventListener('click', function (event) {
+    var choice = event.target.src;
+    var game = new Game (choice, selectedGameType);
+    replay()
+    runIt(game);
     showMeThatScoreBoard();
     displayOutcome();
-    setTimeout(function(){
-      createDifficultGameView()
-        }, 1500);
-    return
-  } )
+  } );
 }
