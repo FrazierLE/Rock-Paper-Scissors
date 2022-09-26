@@ -3,6 +3,8 @@ html {
   font-family: 'Roboto', sans-serif;
   height: 100vh;
   width: 100vw;
+  background-image: url(https://nypost.com/wp-content/uploads/sites/2/2014/06/rock-paper.jpg?quality=75&strip=all);
+  background-size: contain;
 }
 
 body {
@@ -36,7 +38,6 @@ h6 {
 }
 
 ul {
-  border: 3px solid green;
   flex-direction: colunn;
   flex-direction: column;
   align-items: center;
@@ -46,7 +47,6 @@ ul {
 img {
   height: 10vh;
   width: 10vh;
-  border: 1px solid green;
 }
 
 .flex {
@@ -55,28 +55,22 @@ img {
 }
 
 .title {
+  margin-top: -4%;
   margin-bottom: 10%;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100vh;
+  color: white;
 }
 
 .human, .computer {
-  border: 3px solid blue;
   width: 15%;
   height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-}
-
-.difficult {
-  border: 3px solid orange;
-}
-
-.classic {
-  border: 3px solid red;
+  color: white;
 }
 
 section.main-section {
@@ -88,7 +82,6 @@ section.main-section {
 }
 
 .home-page {
-  border: 5px dashed purple;
   flex-direction: column;
   width: 40%;
   height: 50vh;
@@ -99,16 +92,19 @@ section.main-section {
   height: 100vh;
   width: 100%;
   flex-direction: column;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .classic-view, .difficult-view {
-  border: 1px solid blue;
   width: 40vw;
   height: 40vh;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  color: white;
 }
 
 .difficult-view {
