@@ -1,7 +1,14 @@
 var classicChoices;
 var difficultChoices;
 var selectedGameType;
+var human = new Player ('Human', '👤');
+var computer = new Player ('Computer', '💻');
 
+var rock = document.querySelector('#rockClassic').src;
+var paper = document.querySelector('#paperClassic').src;
+var scissors = document.querySelector('#scissorsClassic').src;
+var cowboy = document.querySelector('#cowboy').src;
+var gun = document.querySelector('#gun').src;
 var classicSection = document.querySelector('#classicClickable');
 var difficultSection = document.querySelector('#difficultClickable');
 var sectionHomeView = document.querySelector('#homePage');
@@ -51,6 +58,7 @@ function changeGame() {
   updatingTitle.innerText = "Choose Your Game";
 }
 
+
 function pickClassic() {
   classicChoices = [rock, paper, scissors];
   selectedGameType = 'classic';
@@ -79,38 +87,32 @@ function displayOutcome() {
   }, 1500)
 }
 
-var weaponsC = document.querySelectorAll('.classicWeapons');
-for (var i = 0; i < weaponsC.length; i++) {
-  weaponsC[i].addEventListener('click', function (event) {
-    var choice1 = event.target.src
-    classic = new Game (choice1, 'classic');
-    classic.rallyTheTroops(human, computer);
-    classic.randomCompChoice()
-    outcomeView.innerHTML = `<img src="${classic.compChoice}"><img src="${classic.humanChoice}"> `;
-    updatingTitle.innerText = classic.showTheWinner();
-    showMeThatScoreBoard();
-    displayOutcome();
-    setTimeout(function(){
-      createClassicGameView()
-        }, 1500);
-    return
-  } )
+function runIt(game) {
+  game.rallyTheTroops(human, computer);
+  game.randomCompChoice()
+  outcomeView.innerHTML = `<img src="${game.compChoice}"><img src="${game.humanChoice}"> `;
+  updatingTitle.innerText = game.showTheWinner();
 }
 
-var weaponsD = document.querySelectorAll('.difficultWeapons');
-for (var i = 0; i < weaponsD.length; i++) {
-  weaponsD[i].addEventListener('click', function () {
-    var choice2 = event.target.src
-    difficult = new Game (choice2, 'difficult');
-    difficult.rallyTheTroops(human, computer);
-    difficult.randomCompChoice()
-    outcomeView.innerHTML = `<img src="${difficult.compChoice}"><img src="${difficult.humanChoice}"> `;
-    updatingTitle.innerText = difficult.showTheWinner();
+function replay() {
+  if(selectedGameType === 'classic') {displayOutcome();
+  setTimeout(function(){
+      createClassicGameView()
+    }, 1500);}
+  else {displayOutcome();
+  setTimeout(function(){
+      createDifficultGameView()
+    }, 1500);}
+}
+
+var weapons = document.querySelectorAll('.weapons');
+for (var i = 0; i < weapons.length; i++) {
+  weapons[i].addEventListener('click', function (event) {
+    var choice = event.target.src;
+    var game = new Game (choice, selectedGameType);
+    replay()
+    runIt(game);
     showMeThatScoreBoard();
     displayOutcome();
-    setTimeout(function(){
-      createDifficultGameView()
-        }, 1500);
-    return
-  } )
+  } );
 }
