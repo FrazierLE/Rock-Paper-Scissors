@@ -7,6 +7,7 @@ Step 1: Fork the project to Github account
 Step 2: Clone the repository to local machine using git clone and the url
 Step 3: cd into the project using the terminal
 Step 4: open it up on a browser by typing 'index.html' into the terminal
+Deployed Link: https://frazierle.github.io/Rock-Paper-Scissors/
 
 Preview of App:
 
