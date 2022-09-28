@@ -3,11 +3,11 @@ Abstract:
 This application is two versions of rock, paper, scissors. There is a classic version with 3 fighter options and a difficult version with 5 fighter options. It is the user versus the computer, and the application keeps track of each player's wins.
 
 Installation Instructions:
-Step 1: Fork the project to Github account
-Step 2: Clone the repository to local machine using git clone and the url
-Step 3: cd into the project using the terminal
-Step 4: open it up on a browser by typing 'index.html' into the terminal
-Deployed Link: https://frazierle.github.io/Rock-Paper-Scissors/
+1. Fork the project to Github account
+1. Clone the repository to local machine using git clone and the url
+1. cd into the project using the terminal
+1. open it up on a browser by typing 'index.html' into the terminal
+* Deployed Link: https://frazierle.github.io/Rock-Paper-Scissors/
 
 Preview of App:
 
